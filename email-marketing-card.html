@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html><head>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1200px; height: 800px; background: #1c1917; font-family: Sora, sans-serif; overflow: hidden; }
+
+  .card { padding: 48px; height: 100%; display: flex; flex-direction: column; }
+
+  /* === HERO STRIP === */
+  .hero { display: flex; align-items: center; justify-content: space-between; margin-bottom: 36px; }
+  .hero-left { display: flex; align-items: center; gap: 16px; }
+  .hero-left svg { width: 52px; height: 52px; }
+  .brand { display: flex; flex-direction: column; }
+  .brand-name { font-size: 24px; font-weight: 800; color: #fafaf9; letter-spacing: -0.03em; }
+  .brand-name span { color: #ea580c; }
+  .brand-sub { font-size: 11px; color: #a8a29e; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; margin-top: 2px; }
+
+  .stats { display: flex; gap: 24px; }
+  .stat { text-align: center; padding: 0 16px; border-right: 1px solid rgba(255,255,255,0.06); }
+  .stat:last-child { border-right: none; }
+  .stat-val { font-size: 22px; font-weight: 800; color: #ea580c; letter-spacing: -0.02em; }
+  .stat-label { font-size: 9px; color: #78716c; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-top: 2px; }
+
+  /* === MODULE GRID === */
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; flex: 1; }
+  .tile {
+    background: #292524; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px;
+    padding: 20px; display: flex; flex-direction: column; position: relative;
+  }
+  .tile-icon {
+    width: 36px; height: 36px; border-radius: 10px; background: rgba(234,88,12,0.1);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 12px;
+  }
+  .tile-icon svg { width: 18px; height: 18px; stroke: #ea580c; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .tile-name { font-size: 14px; font-weight: 700; color: #fafaf9; margin-bottom: 4px; }
+  .tile-desc { font-size: 11px; color: #78716c; line-height: 1.4; }
+  .tile-tag {
+    position: absolute; top: 12px; right: 12px;
+    font-size: 8px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em;
+    padding: 3px 8px; border-radius: 4px;
+  }
+  .tag-core { background: rgba(234,88,12,0.15); color: #ea580c; }
+  .tag-new { background: rgba(239,68,68,0.15); color: #f87171; }
+  .tag-intel { background: rgba(251,191,36,0.15); color: #fbbf24; }
+
+  /* === BOTTOM STRIP === */
+  .bottom {
+    margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .bottom-left { font-size: 11px; color: #57534e; }
+  .bottom-badges { display: flex; gap: 16px; }
+  .badge { display: flex; align-items: center; gap: 6px; font-size: 10px; color: #78716c; font-weight: 600; }
+  .badge-dot { width: 5px; height: 5px; border-radius: 50%; }
+  .bottom-url { font-size: 12px; font-weight: 700; color: #ea580c; letter-spacing: 0.02em; }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="100,20 169.28,60 134.64,80 100,60" fill="#ea580c" opacity="0.15"/>
+        <polygon points="100,20 100,60 65.36,80 30.72,60" fill="#ea580c" opacity="0.12"/>
+        <polygon points="169.28,60 169.28,140 134.64,120 134.64,80" fill="#ea580c" opacity="0.08"/>
+        <polygon points="30.72,60 65.36,80 65.36,120 30.72,140" fill="#ea580c" opacity="0.10"/>
+        <polygon points="169.28,140 100,180 100,140 134.64,120" fill="#ea580c" opacity="0.05"/>
+        <polygon points="30.72,140 65.36,120 100,140 100,180" fill="#ea580c" opacity="0.06"/>
+        <polygon points="100,60 134.64,80 134.64,120 100,140 65.36,120 65.36,80" fill="#292524"/>
+        <g stroke="#ea580c" stroke-width="6" fill="none" stroke-linejoin="round">
+          <polygon points="100,20 169.28,60 169.28,140 100,180 30.72,140 30.72,60"/>
+          <polygon points="100,60 134.64,80 134.64,120 100,140 65.36,120 65.36,80"/>
+          <line x1="100" y1="20" x2="100" y2="60"/>
+          <line x1="169.28" y1="60" x2="134.64" y2="80"/>
+          <line x1="169.28" y1="140" x2="134.64" y2="120"/>
+          <line x1="100" y1="180" x2="100" y2="140"/>
+          <line x1="30.72" y1="140" x2="65.36" y2="120"/>
+          <line x1="30.72" y1="60" x2="65.36" y2="80"/>
+          <line x1="100" y1="60" x2="134.64" y2="40"/>
+          <line x1="134.64" y1="120" x2="134.64" y2="160"/>
+          <line x1="65.36" y1="120" x2="30.72" y2="100"/>
+        </g>
+        <g fill="#ea580c">
+          <circle cx="100" cy="20" r="6.5"/><circle cx="169.28" cy="60" r="6.5"/>
+          <circle cx="169.28" cy="140" r="6.5"/><circle cx="100" cy="180" r="6.5"/>
+          <circle cx="30.72" cy="140" r="6.5"/><circle cx="30.72" cy="60" r="6.5"/>
+        </g>
+        <path d="M90 0V730H232V0ZM212 0V125H527V0Z" fill="#ea580c" transform="translate(76.77,114.28) scale(0.0420,-0.0420)"/>
+        <path d="M90 0V730H232V0ZM212 0V125H527V0Z" fill="#ea580c" transform="translate(100.00,114.28) scale(0.0420,-0.0420)"/>
+      </svg>
+      <div class="brand">
+        <div class="brand-name">Lattice <span>Look</span></div>
+        <div class="brand-sub">Compliance Intelligence Platform</div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-val">20+</div><div class="stat-label">Modules, one training matrix</div></div>
+    </div>
+  </div>
+
+  <!-- MODULE GRID -->
+  <div class="grid">
+    <div class="tile">
+      <span class="tile-tag tag-core">Core</span>
+      <div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/><path d="M9 14l2 2 4-4"/></svg></div>
+      <div class="tile-name">Training Matrix</div>
+      <div class="tile-desc">Position-to-course mapping. Five requirement types. The backbone.</div>
+    </div>
+    <div class="tile">
+      <span class="tile-tag tag-core">Core</span>
+      <div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+      <div class="tile-name">Compliance Engine</div>
+      <div class="tile-desc">Real-time scoring. Configurable thresholds. Auto expiry monitoring.</div>
+    </div>
+    <div class="tile">
+      <div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+      <div class="tile-name">Document Control</div>
+      <div class="tile-desc">Full lifecycle. Version control. ECG health monitoring.</div>
+    </div>
+    <div class="tile">
+      <span class="tile-tag tag-new">New Regs</span>
+      <div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M12 2a8 8 0 018 8c0 6-8 12-8 12S4 16 4 10a8 8 0 018-8z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div class="tile-name">Psychosocial Health</div>
+      <div class="tile-desc">Hazard registers. Anonymous surveys. CAPA workflows.</div>
+    </div>
+    <div class="tile">
+      <span class="tile-tag tag-intel">Intelligence</span>
+      <div class="tile-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg></div>
+      <div class="tile-name">Benchmarking</div>
+      <div class="tile-desc">Constellation. Heatmaps. What-If simulator. Gap analysis.</div>
+    </div>
+    <div class="tile">
+      <div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+      <div class="tile-name">Self-Service Portal</div>
+      <div class="tile-desc">Employee cert uploads. Compliance status. Training history.</div>
+    </div>
+    <div class="tile">
+      <div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <div class="tile-name">Working Groups</div>
+      <div class="tile-desc">Cross-org collaboration. Shared playbooks.</div>
+    </div>
+    <div class="tile">
+      <div class="tile-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+      <div class="tile-name">Provider Directory</div>
+      <div class="tile-desc">RTO verification. Course catalog. Provider ratings.</div>
+    </div>
+    <div class="tile">
+      <div class="tile-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c6 3 10 0 12 0v-5"/></svg></div>
+      <div class="tile-name">Inductions</div>
+      <div class="tile-desc">Contractor flows. Auto reminders. Acknowledgement tracking.</div>
+    </div>
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="bottom">
+    <div class="bottom-left">Australian-owned. Australian-hosted. No data leaves the country.</div>
+    <div class="bottom-badges">
+      <div class="badge"><span class="badge-dot" style="background:#73AA50;"></span>$10M PI</div>
+      <div class="badge"><span class="badge-dot" style="background:#D69A2D;"></span>$20M PL</div>
+      <div class="badge"><span class="badge-dot" style="background:#ea580c;"></span>ACS Member</div>
+    </div>
+    <div class="bottom-url">latticelook.au/features</div>
+  </div>
+
+</div>
+</body></html>
